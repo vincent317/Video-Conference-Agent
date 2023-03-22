@@ -1,5 +1,6 @@
-# TODO: config
-API_KEY = "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"
+import os
+
+API_KEY = os.environ['OPENAI_API_KEY']
 
 from langchain.llms import OpenAI
 from langchain.text_splitter import RecursiveCharacterTextSplitter
