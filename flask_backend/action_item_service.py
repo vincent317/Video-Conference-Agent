@@ -10,7 +10,7 @@ from langchain.chains.question_answering import load_qa_chain
 from langchain.embeddings.openai import OpenAIEmbeddings
 
 llm = OpenAI(model_name="gpt-3.5-turbo-0301", openai_api_key = API_KEY)
-prompt = "Given the meeting transcript, extract the action items in the format of WHO will DO SOMETHING."
+prompt = "Extract the action items from this transcript:"
 
 def extract_action_item(meeting_transcript_string):
     source_chunks = []
