@@ -1,0 +1,27 @@
+Dazhi: Hi guys, there has been a lot of big news in tech industry going on this week.
+
+Jeff: Yeah some are exciting and some are depressing. The exciting news is that OpenAI released its latest multimodal GPT-4 model. While less capable than humans in many real-world scenarios, exhibits human-level performance on various professional and academic benchmarks. For example, it passes a simulated bar exam with a score around the top 10% of test takers; in contrast, GPT-3.5’s score was around the bottom 10%. 
+
+Yooni: Haha this was so exciting. Can’t imagine what GPT-4 can do since ChatGPT is so powerful already. I have been using ChatGPT extensively for my everyday work. 
+
+Dazhi: GPT-4 is so powerful. According to OpenAI, GPT-4 succeed in the most recent public-available tests in the case of the Olympiads and AP free response questions or by purchasing 2022 to 2023 editions of practice exams and they did no specific training for these exams.
+
+Jeff: Yeah I think what’s more exciting is that GPT-4 can even accept visual input. There was an example on OpenAI website that the user asked “What’s funny about this image? Describe it panel by panel.” And GPT-4 successfully identified all the interesting features of that image.
+
+Yooni: Given these features, I think it’s definitely worthwhile for us to do a deep dive into its capabilities. Does anyone want to take this task?
+
+Dazhi: uh I can do that. For next week, Dazhi’s task will be reading OpenAI’s technical report for GPT-4 and presenting a summary of it to the team.
+
+Jeff: Thank you Dazhi. At the same time, the bad news in the tech industry is that Meta starts another round of layoff since last November. I think Meta planned to layoff are about 10,000 employees, or roughly 13 percent of its workforce.
+
+Yooni: That’s a lot of people. I remembered Meta already laid off 10,000 employees last year.  The layoffs will affect Meta’s recruiting team this week, with a restructuring of its tech and business group to come in April and May, Mr. Zuckerberg said in a memo posted on the company’s website.
+
+Dazhi: I also heard this layoff involved a lot of Meta’s middle layer management people. On an earnings call in February, the chief executive said he did not want the company to be overstuffed with a layer of middle management, or “managers managing managers.”
+
+Jeff: Yeah this is an interesting question for us to investigate as well. Whether too much middle management people are actually helping or hurting the company. 
+
+Yooni: It makes sense because Meta has kept changing from Metaverse to AI or vice versa. There’s definitely something wrong with their leadership structure. For next week, Yooni’s to-do item will be investigating whether the middle management layer is helping or slowing the company’s efficiency.
+
+Dazhi: Sounds good. Maybe other tech giants like Amazon or Google are experiencing the same problem.
+
+Jeff: This was an interesting discussion. Have a good week guys.

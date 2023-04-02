@@ -1,0 +1,41 @@
+Dazhi: Hi guys, glad to see you back from Spring Break.
+
+Jeff: Yeah I just came back from North Carolina yesterday, I got depressed again coming back to Pittsburgh.
+
+Yooni: Haha me too. I missed staying in the pools of Cancun. 
+
+Dazhi: Good. Let’s start our weekly standup meeting. We have a mentor meeting coming up next week and I think it would be great for us to split up our work today and make progress before meeting with next week.
+
+Jeff: Yes. So far I think Yooni has done a great job on investigating different cloud services ASR efficiency, but the action items and agenda items are still unclear to us.
+
+Yooni: I agree. There are many NLP services that we can explore to achieve this task. Have you guys heard about the ChatGPT from OpenAI? I think it would be a great candidate for this task.
+
+Dazhi: Yeah, ChatGPT is amazing. I have been using it extensively for all my ACC projects. I knew nothing about Spark before and it gives me lots of great examples of Spark operations.
+
+Jeff: Oh then Vincent, Dazhi, would you be able to work on the task to use ChatGPT API for extracting agenda and action items from the meeting transcript? I believe ChatGPT would definitely help us a lot in this project. 
+
+Dazhi: Yeah, sure thing.
+
+Jeff: Ok, moving on to our next agenda item, have you guys decide what documents we should submit for the next week?
+
+Yooni: Yeah, let me take a quick look at Canvas. Ok, we have a plan and design document due next week. Most of the stuff seems to overlap a lot with our previous documents.
+
+Jeff: Yes, for the plan document, we have introduction, different tasks, milestone plans, terminology and acronym explanations, references, and reflection. 
+
+Dazhi: For the design document, we have introduction, design constraints, systems architecture, data design, implementation overview, design models, test design, deployment, and tools and dependencies.
+
+Yooni: Ok, it doesn't seem too complicated. After finishing the documents, who should submit them? I have three interviews next week so I probably won’t have enough time to double check the documents and submit them.
+
+Jeff: I am pretty flexible in the next week so I am fine with either way. Submitting the documents on gradescope should be pretty straightforward. 
+
+Dazhi: Yeah, I would also want to focus on ACC project next week. I cannot write any code without TA’s help so I will probably spend a lot of time in office hour next week. So I probably would also not be able to submit them.
+
+Yooni: Ok, Jeffrey, can you then have document submission as your to-do item? You can always let us know if you need any help.
+
+Jeff: Yeah sure I can do that. I will let you guys know when I am finished the submission.
+
+Dazhi: Sounds good Jeff. Thank you very much for your help! Do you guys have anything you want to discuss in this meeting?
+
+Yooni: I think we are good. Everyone seems to have a clear idea of what they are supposed to do next.
+
+Jeff: Ok byebye!

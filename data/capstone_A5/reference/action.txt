@@ -1,0 +1,1 @@
+Yooni will investigate ChatGPT's API for extracting agenda and action items from meeting transcript.

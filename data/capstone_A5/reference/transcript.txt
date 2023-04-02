@@ -1,0 +1,21 @@
+Dazhi: Hi guys, glad to see you back from Spring Break.
+
+Jeff: Yeah I just came back from North Carolina yesterday, I got depressed again coming back to Pittsburgh.
+
+Yooni: Haha me too. I missed staying in the pools of Cancun. 
+
+Dazhi: Good. Let’s start our weekly standup meetings. We have a mentor meeting coming up next week and I think it would be great for us to split up our work and make progress before meeting with them next week.
+
+Jeff: Yes. So far I think Yooni has done a great job on investigating different cloud services ASR efficiency, but the action items and agenda items are still unclear to us.
+
+Yooni: I agree. There are many NLP services that we can explore to achieve this task. Have you guys heard about the ChatGPT from OpenAI? I think it would be a great candidate for this task.
+
+Dazhi: Yeah, ChatGPT is amazing. I have been using it extensively for all my ACC projects. I knew nothing about Spark before and it gives me lots of great examples of Spark operations. I think it’d be useful to use ChatGPT’s APIs for extracting agenda and action items from the meeting transcript.
+
+Jeff: Then Dazhi can you take on that task for next week? I believe ChatGPT would definitely help us a lot in this project.
+
+Dazhi: No, I’m busy this week.
+
+Yooni: No worries, I’ll work on it. Let’s move on to our next agenda item. We have  plan and design document due next week. Most of the stuff seems to overlap a lot with our previous documents.
+
+Jeff: Yes, for the plan document, we have introduction, different tasks, milestone plans, terminology and acronym explanations, references, and reflection. 
