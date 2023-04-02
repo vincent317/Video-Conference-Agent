@@ -1,0 +1,51 @@
+Dazhi: Hi Jeffrey and Yooni. Let’s talk about the data scraping project that you guys have. How's this project coming along?
+
+Jeffrey: Hi Dazhi, we're a bit stuck with scraping some of the websites on our list. Some of them are dynamic, and I couldn't get the data we need.
+
+Yooni: Yeah, and I'm new to this task, so I was wondering if you could help us out.
+
+Dazhi: Of course, I will be happy to help. What specifically do you need help with?
+
+Jeffrey: Well, many websites seem dynamic, so I was not able to figure out what to do to scrape them. I used a few python libraries but they are not returning me what I want.
+
+Dazhi: Have you read into the selenium library?
+
+Jeffrey: I have not.
+
+Dazhi: Selenium is a software testing framework used to automate web browsers. It can simulate user interactions with a website and perform automated testing to check for errors, performance issues, and functionality. Try it for some of the websites you were talking about.
+
+Jeffrey: Sure. How should I get started with that?
+
+Dazhi: You can start with documentation. Jeffrey, first to read Selenium documentation as your task.
+
+Jeffrey: Ok!
+
+Yooni: So Jeffrey, have you been using the beautiful soup library?
+
+Jeffrey: Yes, that’s one of the python libraries that I have been using.
+
+Yooni: I kept having installation issues. I don’t know what is the issue. My python version might be too old. Jeffrey, would you be able to help me with installation as another task?
+
+Jeffrey: I will help you with that. But Yooni, can you also update your python environment before that? I think this is an important task before I look into anything. 
+
+Yooni: That would be great, thank you. 
+
+Dazhi: Yeah you are just waiting for the meeting now. Yooni, I think you can read into Beautiful Soup’s documentation while Jeffrey does his tasks.
+
+Yooni: Sounds good to me. I will make sure I read that.
+
+Dazhi: Good. Jeffrey, last individual task for you, could you create a GitHub branch? I think by doing that we can track the progress of this project.
+
+Jeffrey: Sure, I can do that. 
+
+Dazhi: Alright. Sorry to overwhelm you with tasks, but before you guys go, Jeffrey and Yooni, could you two make sure to report the progress tomorrow to me again? 
+
+Jeffrey: Sure.
+
+Yooni: Sounds good. Jeffrey, can you schedule a meeting with me later so you can explain your previous code to me? I want to make sure I understand it.
+
+Jeffrey: Yeah, that sounds good. I will take this as my task. Lots of to-do for this project, but I will manage that. Dazhi, what would we do if we run into further issues? Can you add a new member to the team to help out with the project after this? 
+
+Dazhi: Yeah, I will go ahead and do this. Thank you for the reminder. I'll send you all updates in a week.
+
+Yooni: Thanks Dazhi. 

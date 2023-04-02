@@ -1,0 +1,80 @@
+Dazhi: Hi Jeffrey and Yooni. Let’s talk about the data scraping project that you guys have. How's this project coming along?
+
+Jeffrey: Hi Dazhi, we're a bit stuck with scraping some of the websites on our list. Some of them are dynamic, and I couldn't get the data we need.
+
+Yooni: Yeah, and I'm new to this task, so I was wondering if you could help us out.
+
+Dazhi: Of course, I will be happy to help. What specifically do you need help with?
+
+Jeffrey: Well, many websites seem dynamic, so I was not able to figure out what to do to scrape them. I used a few python libraries but they are not returning me what I want.
+
+Dazhi: Have you read into the selenium library?
+
+Jeffrey: I have not.
+
+Dazhi: Selenium is a software testing framework used to automate web browsers. It can simulate user interactions with a website and perform automated testing to check for errors, performance issues, and functionality. Try it for some of the websites you were talking about.
+
+Jeffrey: Sure. Jeffrey’s first action item would be to read beautiful soup’s documentation then. 
+
+Dazhi: You mean the selenium’s documentation?
+
+Jeffrey: Oh yeah, oops. Sorry, I meant the selenium documentation.
+
+Yooni: So Jeffrey, have you been using the beautiful soup library?
+
+Jeffrey: Yes, that’s one of the python libraries that I have been using.
+
+Yooni: I kept having installation issues. I don’t know what is the issue. My python version might be too old. 
+
+Jeffrey: I will help you with that. I guess another of Jeffrey’s action items will be to help Yooni with Python issues. 
+
+Yooni: Actually, I want help with installation issues. I don’t think it is really a Python thing. 
+
+Jeffrey: Oh! Ok, I will help you with that then. Nonetheless, could you update your python environment before that as another action item?
+
+Yooni: That would be great, thank you. Is that really necessary though?
+
+Jeffrey:  The latest version of Python may have a fix for the issue you are having. If you are using an older version of Python, it is possible that a bug has been fixed in a newer version. 
+
+Yooni: Oh I see. Sure let’s do what you said. 
+
+Dazhi: While you are waiting for Jeffrey to help you, I think you can read into Selenium’s documentation as your action item Yooni.
+
+Yooni: I have not finished the beautiful Soup part. Can I first start with something more relevant? 
+
+Dazhi: Oh yeah. Sure, read Beautiful Soup’s documentation then. Good, Jeffrey, could you send me the link to your Github Branch as another action item?
+
+Jeffrey: I have not created a GitHub branch yet. 
+
+Dazhi: This is not good. Create a GitHub branch so we can track the progress of this project first.
+
+Jeffrey: Sure, I can do that. 
+
+Dazhi: Another action item for both of you that I have listed out before the meeting, Jeffrey and Yooni, is to report the progress to me sometime today. I thought you guys can email me but looks like you guys are not ready yet. 
+
+Jeffrey: That’s true. Sorry about that.
+
+Yooni: We can report the progress to you by next week though. Is that good for you?
+
+Dazhi: No, by tomorrow.
+Jeffrey: We can give a try.
+
+Yooni: Sounds good to me. Jeffrey, could we schedule a meeting later so you can explain your code to me? I want to make sure I understand it.
+
+Jeffrey: No, I do not have any previous code, but I can still schedule a meeting with you.
+
+Dazhi: Yooni, do you also want to do the recordings for the previous project as another action item?
+
+Yooni: I might be too busy with this week’s project.
+
+Dazhi: That’s fine then. We can discuss that later. Alright, great. And for Dazhi’s action item, he will also add some new members to the team to help out with this project. I'll send you all updates in a week.
+
+Jeffrey: Actually I am not sure if this is necessary.
+
+Yooni: Yeah, are you sure about that?
+
+Dazhi: Well, I agree that it might not be necessary, but the progress has been slow. Now I have enough budget, we can afford to do that. Although I am not sure if I can even find someone. I will still put this on my action item and see who I can find. Emmm, Let’s do one more new member to the team. Does that sound good?
+
+Jeffrey: Sure, I understand.
+
+Yooni: Thanks Dazhi. 
