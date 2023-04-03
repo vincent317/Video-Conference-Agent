@@ -1,0 +1,57 @@
+Jeffrey: Good morning everyone, thank you for joining today's meeting. Our agenda for today is to discuss the BM25 algorithm, the Indri probabilistic model, and reranking algorithms for search engines. Let's start with the BM25 algorithm. Dazhi, can you please give us a brief overview of what the BM25 algorithm is and how it works?
+
+Dazhi: Sure, the BM25 algorithm is a ranking function used by search engines to rank documents based on their relevance to a given query. It takes into account the frequency of the query terms in the document and the length of the document. The basic idea behind BM25 is that documents with higher term frequency should be ranked higher, but the impact of term frequency is reduced as the document length increases. This helps to balance the relevance of the document with its length.
+
+Jeffrey: Thank you, Dazhi. Yooni, have you worked with BM25 algorithm before? Can you share your thoughts on it?
+
+Yooni: Yes, I have worked with it before, and I think it's a very effective algorithm for ranking documents. It's widely used in information retrieval and has been shown to produce good results.
+
+Jeffrey: Great, that's good to hear. To move forward with our action items, I suggest that we implement the BM25 algorithm in Python first. I guess someone has to take the lead on this task and develop the code for it. My action item will be to start working on implementing the BM25 algorithm in Python.
+
+Yooni: That's fantastic. Once we have implemented the algorithm in Python, we will be ready to do that in Java, because it would be faster. Dazhi, can you implement the algorithm in Java?
+
+Dazhi: Yes, I can do that. Dazhi’s action item will be to implement the BM25 algorithm in java. 
+
+Yooni: I will then translate the Python code to Java after we finish implementing it, as my action item.
+
+Jeffrey: Thank you, Yooni. Let's now move on to the Indri probabilistic model. Dazhi, can you please give us a brief overview of what the Indri probabilistic model is and how it works?
+
+Dazhi: Certainly. The Indri probabilistic model is a language modeling approach to information retrieval. It estimates the probability of generating a query from a document and uses this probability to rank the documents. The model is based on the assumption that each document is a mixture of topics, and each query is a mixture of topic models. The model calculates the probability of generating the query from the document's topic distribution and uses this probability to rank the documents.
+
+Jeffrey: Thank you, Dazhi. That was very informative. As our next action item, I suggest that Yooni and Jeffrey read up more on the Indri probabilistic model and try to implement it in Python as our action item. Dazhi, can you take the lead on implementing the Indri model in Java on your own?
+
+Dazhi: Yes, I can do that. Dazhi’s action item will be to implement the Indri model in Java on his own.
+
+Jeffrey: Great. Lastly, let's discuss the reranking algorithms. I think it's best to use a machine learning model for reranking. Dazhi, Yooni, can you please read up on how to implement reranking for search engines? We'll discuss the options available, and once we have an understanding, we can decide which machine learning model to use.
+
+Dazhi: Yes, I'll read up on this. Dazhi and Yooni’s action item will be to read up on how to implement reranking for search engines. 
+
+Yooni: Sure, I'll do the same.
+
+Jeffrey: Thank you, Dazhi and Yooni. I'll take the lead on studying what machine learning model to use for reranking as Jeffrey’s action item. In the meantime, does anyone have any questions or suggestions?
+
+Dazhi: I have a question about the BM25 algorithm. Is there a specific dataset or corpus that we should use for testing our implementation?
+
+Jeffrey: That's a great question, Dazhi. We could use a publicly available dataset, such as the TREC dataset, which is commonly used in information retrieval research. We can discuss this further and decide on a dataset after we've implemented the BM25 algorithm in Python.
+
+Yooni: I have a suggestion regarding the reranking algorithms. We could consider using deep learning models for reranking, such as neural networks.
+
+Jeffrey: That's an interesting suggestion, Yooni. I think we should definitely consider deep learning models as an option for reranking. Once we have a better understanding of the available options for implementing reranking, we can discuss this further.
+
+Dazhi: I have another question about the Indri probabilistic model. Are there any specific libraries or packages that we should use for implementing it?
+
+Jeffrey: There are several libraries available for implementing the Indri model, such as Lemur and Galago. We can discuss which library to use after we've read more about the Indri model and have a better understanding of what we need for our implementation.
+
+Yooni: I also have a suggestion regarding the implementation of the Indri model. We could consider using MapReduce or Spark for the implementation, which would help us scale to larger datasets.
+
+Jeffrey: That's a great suggestion, Yooni. We should definitely consider using MapReduce or Spark for the implementation, especially if we plan on scaling to larger datasets. Let's look into this further as we work on the Indri implementation. Alright, if there are no further questions or suggestions, let's end the meeting here. Thank you, everyone, for your time and effort. Let's get to work on our action items and meet back here in a week to discuss our progress.
+
+Dazhi: Before we end the meeting, I just want to confirm the timeline for completing these action items. When do we aim to complete each of the tasks?
+
+Jeffrey: That's a good question, Dazhi. I think we should aim to complete the implementation of the BM25 algorithm in Python within the next week. Once that's done, we can move on to implementing it in Java and translating the code to Java. For the Indri probabilistic model, Yooni and I will read up on it this week and aim to have a basic implementation in Python within two weeks. Dazhi, you can work on implementing it in Java simultaneously. For the reranking algorithms, let's aim to have a better understanding of the available options within the next week, and then we can decide on a machine learning model to use and start working on its implementation.
+
+Yooni: That sounds reasonable to me.
+
+Dazhi: Agreed.
+
+Jeffrey: Alright then, let's end the meeting here. Thank you, everyone, for your time and effort. Let's work hard on our action items and meet back here in a week to discuss our progress.

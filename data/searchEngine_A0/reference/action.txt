@@ -1,0 +1,9 @@
+Jeffrey will start working on implementing the BM25 algorithm in Python.
+Dazhi will implement the BM25 algorithm in Java.
+Yooni will translate the Python code to Java after they finish implementing BM25.
+Jeffrey will read up more on the Indri probabilistic model and try to implement it in Python.
+Yooni will read up more on the Indri probabilistic model and try to implement it in Python.
+Dazhi will implement the Indri model in Java on his own.
+Dazhi will read up on how to implement reranking for search engines. 
+Yooni will read up on how to implement reranking for search engines. 
+Jeffrey will take the lead on studying what machine learning model to use for reranking.
