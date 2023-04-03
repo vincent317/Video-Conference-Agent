@@ -1,0 +1,2 @@
+Vincent will investigate ChatGPT’s APIs for extracting agenda and action items from the meeting transcript.
+Jeff will submit the plan and design documents.

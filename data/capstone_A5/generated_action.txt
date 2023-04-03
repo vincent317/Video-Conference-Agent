@@ -1,0 +1,4 @@
+Yooni will work on using ChatGPT's APIs for extracting agenda and action items from the meeting transcript.
+The team will work on the plan and design document due next week together.
+No one is currently available to submit the plan and design document, so it is unclear who will do it.
+There are no further action items from this meeting.

@@ -1,0 +1,3 @@
+Dazhi will read OpenAI’s technical report for GPT-4 and present a summary of it to the team.
+
+Yooni will investigate whether the middle management layer is helping or slowing the company’s efficiency.
