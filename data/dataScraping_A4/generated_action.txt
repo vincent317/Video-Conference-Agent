@@ -1,0 +1,6 @@
+Jeffrey will read Selenium's documentation.
+Jeffrey will help Yooni with installation issues.
+Yooni will update her Python environment.
+Yooni will read Beautiful Soup's documentation.
+Jeffrey will create a GitHub branch for tracking the project progress.
+Jeffrey and Yooni will report the progress to Dazhi by tomorrow.

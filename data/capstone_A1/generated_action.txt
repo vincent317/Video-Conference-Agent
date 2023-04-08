@@ -1,0 +1,3 @@
+Yooni will investigate different cloud services for ASR efficiency.
+Vincent and Dazhi will work on using ChatGPT API for extracting agenda and action items from the meeting transcript.
+Jeff will submit the plan and design documents.

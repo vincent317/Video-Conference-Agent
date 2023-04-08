@@ -19,3 +19,19 @@ Dazhi: No, I’m busy this week.
 Yooni: No worries, I’ll work on it. Let’s move on to our next agenda item. We have  plan and design document due next week. Most of the stuff seems to overlap a lot with our previous documents.
 
 Jeff: Yes, for the plan document, we have introduction, different tasks, milestone plans, terminology and acronym explanations, references, and reflection. 
+
+Dazhi: For the design document, we have introduction, design constraints, systems architecture, data design, implementation overview, design models, test design, deployment, and tools and dependencies.
+
+Yooni: Ok, it doesn't seem too complicated. After finishing the documents, who should submit them? I have three interviews next week so I probably won’t have enough time to double check the documents and submit them.
+
+Dazhi: Yeah, I would also want to focus on ACC project next week. I cannot write any code without TA’s help so I will probably spend a lot of time in office hour next week. So I probably would also not be able to submit them.
+
+Yooni: Ok, maybe Jeffrey can work on it? You can always let us know if you need any help.
+
+Jeff: No, I also won’t be available next week. 
+
+Dazhi: Well, then I guess we’ll just get zeros then. Do you guys have anything you want to discuss in this meeting?
+
+Yooni: I think we are good. Everyone seems to have a clear idea of what they are supposed to do next.
+
+Jeff: Ok byebye!

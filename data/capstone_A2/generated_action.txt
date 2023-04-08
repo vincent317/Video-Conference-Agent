@@ -1,0 +1,2 @@
+Dazhi will use ChatGPT to extract action items and agenda items from the meeting transcript.
+Jeff will submit the plan and design documents.

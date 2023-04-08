@@ -1,2 +1,2 @@
-Dazhi will investigate ChatGPT's API for extracting agenda and action items from meeting transcript.
+Vincent and Dazhi will investigate ChatGPT's API for extracting agenda and action items from meeting transcript.
 Jeff will submit the plan and design documents.

@@ -1,0 +1,9 @@
+Dazhi will help Jeffrey and Yooni with the data scraping project.
+Jeffrey will try using the Selenium library for some of the websites.
+Jeffrey will help Yooni with the installation of the Beautiful Soup library and update her python environment.
+Yooni will read the Beautiful Soup library’s documentation.
+Jeffrey will create a GitHub branch to track the project's progress.
+Jeffrey and Yooni will report the progress to Dazhi tomorrow.
+Jeffrey will schedule a meeting with Yooni to explain his previous code to her.
+Dazhi will add a new member to the team to help out with the project.
+Dazhi will send updates to everyone in a week.

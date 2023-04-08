@@ -1,0 +1,2 @@
+Dazhi will not read OpenAI’s technical report for GPT-4 and present a summary of it to the team.
+Jeff will read OpenAI’s technical report for GPT-4 and present a summary of it to the team.

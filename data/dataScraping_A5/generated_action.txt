@@ -1,0 +1,11 @@
+Jeffrey will try using the selenium library to scrape the dynamic websites.
+
+Jeffrey will help Yooni with her installation issues for the Beautiful Soup library.
+
+Jeffrey will create a GitHub branch to track the project's progress.
+
+Jeffrey and Yooni will report the progress to Dazhi by tomorrow.
+
+Jeffrey will schedule a meeting with Yooni to explain the previous code.
+
+Dazhi will send updates about adding new members to the team to help out with the project.

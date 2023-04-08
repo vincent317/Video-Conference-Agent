@@ -1,0 +1,4 @@
+Dazhi will use ChatGPT to extract agenda and action items from the meeting transcript by next week.
+Jeff will submit the plan and design documents on Gradescope next week.
+Yooni will investigate different cloud services ASR efficiency.
+Jeff will work on submitting the plan and design documents on Gradescope.

@@ -1,0 +1,3 @@
+Yooni: Investigate different cloud services’ ASR efficiency.
+Jeff: Investigate ChatGPT’s APIs for extracting agenda and action items from the meeting transcript.
+Jeff: Submit the plan and design documents.
