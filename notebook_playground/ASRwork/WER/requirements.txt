@@ -1,0 +1,5 @@
+pyjwt
+webvtt-py
+boto3
+jiwer
+pandas
