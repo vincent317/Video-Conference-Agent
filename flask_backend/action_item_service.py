@@ -1,27 +1,24 @@
 import os
+import requests
+import openai
 
 API_KEY = os.environ['OPENAI_API_KEY']
-
-from langchain.llms import OpenAI
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.docstore.document import Document
-from langchain.vectorstores.faiss import FAISS
-from langchain.chains.question_answering import load_qa_chain
-from langchain.embeddings.openai import OpenAIEmbeddings
-
-llm = OpenAI(model_name="gpt-3.5-turbo-0301", openai_api_key = API_KEY)
-prompt = "Extract the action items from this transcript:"
+url = 'https://api.openai.com/v1/chat/completions'
+headers = {'Content-Type': 'application/json', 'Authorization': 'Bearer ' + API_KEY}
 
 def extract_action_item(meeting_transcript_string):
-    source_chunks = []
-    splitter = RecursiveCharacterTextSplitter()
-    for chunk in splitter.split_text(meeting_transcript_string):
-        source_chunks.append(Document(page_content=chunk))
-    search_index = FAISS.from_documents(source_chunks, OpenAIEmbeddings(openai_api_key = API_KEY))
-    chain = load_qa_chain(llm)
+    prompt = "Extract action items from this meeting transcript in this format:\n WHO: ACTION ITEMS"
+    data = {
+        "model": "gpt-3.5-turbo",
+        "messages": [
+            {"role": "system", "content": "This is a meeting transcript."},
+            {"role": "assistant", "content": meeting_transcript_string},
+            {"role": "user", "content": prompt},
+        ],
+        "temperature": 0
+    }
 
-    print("Querying GPT-3.5...")
-    str_res = chain({"input_documents": search_index.similarity_search(prompt, k=4),"question": prompt}, 
-                    return_only_outputs=True)["output_text"]
-    return str_res.split('\n')
+    response = requests.post(url, headers=headers, json=data).json()
+    print(response)
+    print(response['choices'][0]['message']['content'])
     
