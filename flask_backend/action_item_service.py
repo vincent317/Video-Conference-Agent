@@ -21,7 +21,7 @@ def extract_action_item(meeting_transcript_string):
     response = requests.post(url, headers=headers, json=data)
     if response.status_code == 200:
         action_items_string = response.json()['choices'][0]['message']['content']
-        return action_items_string.split('\n')
+        return [a for a in action_items_string.split('\n') if len(a) > 0]
     else:
-        return ["GPT-3.5 API failed.\n"]
+        return None
     
