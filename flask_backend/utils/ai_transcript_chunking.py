@@ -1,4 +1,4 @@
-def process_transcript(transcript, max_words = 300, buffer = 2):
+def generate_overlapping_chunk(transcript, max_words = 300, buffer = 2):
     """
     Splits a transcript into chunks of approximately `max_words` words per part. If `buffer` 
     is greater than 0, each part is buffered by `buffer` lines from the preceding and following parts 

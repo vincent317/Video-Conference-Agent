@@ -3,7 +3,7 @@ from flask_restx import Api, Resource
 
 import zoom_service, action_item_service, time
 from utils.webvtt_parsing import webvtt_parsing
-from utils.transcript_parsing import process_transcript
+from utils.ai_transcript_chunking import generate_overlapping_chunk
 from utils.action_item_parsing import action_item_processing
 
 # Flask & Swagger Initialization
@@ -22,7 +22,7 @@ class Meeting(Resource):
         meeting_transcript_string = webvtt_parsing(vtt_file_location)
         parse_transcript = time.time()
         print("WebVTT parsing takes: %s seconds" % (parse_transcript - fetch_zoom))
-        parsed_2d_list = process_transcript(meeting_transcript_string)
+        parsed_2d_list = generate_overlapping_chunk(meeting_transcript_string)
         break_transcript = time.time()
         print("Breaking transcript into chunks taks %s seconds" % (break_transcript - parse_transcript))
         overlapped = []
