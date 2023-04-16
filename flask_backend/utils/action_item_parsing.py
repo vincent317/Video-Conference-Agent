@@ -1,6 +1,7 @@
 from evaluate import load
 bertscore = load("bertscore")
 
+# Setting use_fast_tokenizer to true can speed up the process about 5X
 def bertscore_calc(predictions, references):
     results = bertscore.compute(predictions=predictions, references=references, lang="en", use_fast_tokenizer = True)
     return results['f1']
