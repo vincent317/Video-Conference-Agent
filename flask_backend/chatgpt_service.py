@@ -81,7 +81,8 @@ def generate_summaries(agenda_text, transcript_text):
     # get a dictionary of agenda item summaries
 
     agenda_summaries = {}
-    for agenda in agenda_text.split('\n'):
+    for agenda in agenda_text.split('.'):
+        print(agenda)
         agenda_summaries[agenda] = \
             return_llm_answer('From this meeting, provide a summary related to this agenda item: '
                                + agenda, chain, search_index)
