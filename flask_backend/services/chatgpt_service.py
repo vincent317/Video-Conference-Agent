@@ -12,6 +12,7 @@ url = 'https://api.openai.com/v1/chat/completions'
 headers = {'Content-Type': 'application/json', 'Authorization': 'Bearer ' + API_KEY}
 
 def extract_action_item(meeting_transcript_string):
+    print("ChatGPT: extracting action items")
     prompt = "Using the given transcript, extract action items for each meeting participant using this format: \"{WHO}: {ACTION ITEM}\""
     data = {
         "model": "gpt-3.5-turbo",
@@ -81,8 +82,7 @@ def generate_summaries(agenda_text, transcript_text):
     # get a dictionary of agenda item summaries
 
     agenda_summaries = {}
-    for agenda in agenda_text.split('.'):
-        print(agenda)
+    for agenda in agenda_text.split('; '):
         agenda_summaries[agenda] = \
             return_llm_answer('From this meeting, provide a summary related to this agenda item: '
                                + agenda, chain, search_index)
@@ -98,3 +98,29 @@ def generate_summaries(agenda_text, transcript_text):
 
     return (overall_summary, agenda_summaries, additional_summaries)
 
+def ppt_matching_api_call(azure_transcript, zoom_transcript):
+    print("ChatGPT: finding participant mapping between transcripts...")
+    # combine two transcript
+    combined_text = "Transcript 1: \n" + azure_transcript + "\nTranscript 2: \n" + zoom_transcript
+    
+    prompt = "Given the following two transcript with different speaker representation, generate a JSON mapping, where each key is the participant in the first transcript, and the value is the corresponding participant name in the second transcript. Return the JSON only."
+    data = {
+        "model": "gpt-3.5-turbo",
+        "messages": [
+            {"role": "system", "content": "Perform participant matching and return a JSON"},
+            {"role": "assistant", "content": combined_text},
+            {"role": "user", "content": prompt},
+        ],
+        "temperature": 0
+    }
+
+    response = requests.post(url, headers=headers, json=data)
+    if response.status_code == 200:
+        content = response.json()
+        mapping = eval(content['choices'][0]['message']['content'])
+        if isinstance(mapping, dict):
+            return mapping
+        else:
+            return ValueError("Error in GPT participant matching. Must return a dictionary mapping in its response.")
+    else:
+        raise ValueError("Fail to get GPT API response.")
