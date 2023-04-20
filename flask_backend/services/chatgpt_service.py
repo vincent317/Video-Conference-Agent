@@ -11,7 +11,7 @@ API_KEY = os.environ['OPENAI_API_KEY']
 url = 'https://api.openai.com/v1/chat/completions'
 headers = {'Content-Type': 'application/json', 'Authorization': 'Bearer ' + API_KEY}
 
-def extract_action_item(meeting_transcript_string):
+def reduce_action_items(meeting_transcript_string):
     print("ChatGPT: extracting action items")
     prompt = "Using the given transcript, extract action items for each meeting participant using this format: \"{WHO}: {ACTION ITEM}\""
     data = {

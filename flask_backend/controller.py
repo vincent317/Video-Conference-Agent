@@ -41,7 +41,7 @@ class ActionItem(Resource):
                     break
             overlapped.append(action_items_arr)
             
-        ret = chatgpt_service.combine_action_item(overlapped)
+        ret = chatgpt_service.reduce_action_items(overlapped)
         os.chdir(current_dir)
         return ret
     
