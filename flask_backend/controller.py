@@ -40,7 +40,8 @@ class ActionItem(Resource):
                 if action_items_arr is not None:
                     break
             overlapped.append(action_items_arr)
-        ret = action_item_processing(overlapped)
+            
+        ret = chatgpt_service.combine_action_item(overlapped)
         os.chdir(current_dir)
         return ret
     
