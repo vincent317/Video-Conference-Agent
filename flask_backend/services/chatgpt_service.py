@@ -113,24 +113,40 @@ def generate_summaries(agenda_text, transcript_text):
     overall_summary = \
         return_llm_answer('Provide a summary of the meeting.', chain, search_index)
 
-    # get a dictionary of agenda item summaries
+    # get a dictionary of short agenda item summaries
+    
+    short_agenda_summaries = {}
+    long_agenda_summaries = {}
 
-    agenda_summaries = {}
-    for agenda in agenda_text.split('; '):
-        agenda_summaries[agenda] = \
-            return_llm_answer('From this meeting, provide a summary related to this agenda item: '
-                               + agenda, chain, search_index)
+    num_agenda = 0
+
+    for agenda in agenda_text.split('.'):
+        if agenda:
+            num_agenda += 1
+            summary_text = \
+                return_llm_answer('From this meeting, provide a one line short summary and detailed, long summary seperated by a empty line, related to this agenda item: '
+                                + agenda, chain, search_index)
+            # parse short / long summaries
+            summary_text = summary_text.split("\n\n")
+            short_summary = summary_text[0]
+            long_summary = summary_text[1]
+            short_agenda_summaries[agenda] = "".join(short_summary.split(":")[1:]).strip()
+            long_agenda_summaries[agenda] = "".join(long_summary.split(":")[1:]).strip()
+        
 
     # get summary not coverred by the agenda items
 
-    num_agenda = len(agenda_summaries)
     additional_summaries = \
         return_llm_answer(
             f"Provide additional information if there are any additional items that were not mentioned" + 
             f"in the following {num_agenda} agenda items: {agenda_text}", chain, search_index
         )
 
-    return (overall_summary, agenda_summaries, additional_summaries)
+    return {"Overall summary" : overall_summary, 
+             "Short agenda summaries" : short_agenda_summaries,
+            "Detailed agenda summaries": long_agenda_summaries,
+             "Additional summaries" : additional_summaries
+            }
 
 def ppt_matching_api_call(azure_transcript, zoom_transcript):
     print("ChatGPT: finding participant mapping between transcripts...")

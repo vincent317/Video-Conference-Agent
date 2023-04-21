@@ -66,7 +66,7 @@ class Summarization(Resource):
         
         res = chatgpt_service.generate_summaries(agenda_items, clean_transcript_string)
         os.chdir(current_dir)
-        return {"overrall symmary" : res[0], "agenda summaries" : res[1], "additional summaries" : res[2]}
+        return res
 
 
 # @api.route('/participants_data/<meeting_id>')
