@@ -121,6 +121,7 @@ def generate_summaries(agenda_text, transcript_text):
     num_agenda = 0
 
     for agenda in agenda_text.split('.'):
+        agenda = agenda.strip()
         if agenda:
             num_agenda += 1
             summary_text = \
@@ -135,7 +136,6 @@ def generate_summaries(agenda_text, transcript_text):
         
 
     # get summary not coverred by the agenda items
-
     additional_summaries = \
         return_llm_answer(
             f"Provide additional information if there are any additional items that were not mentioned" + 
