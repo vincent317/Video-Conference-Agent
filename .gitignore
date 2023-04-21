@@ -1,5 +1,5 @@
 notebook_playground/ASRwork/Azure/.env
-/services/**/*.env
-/services/**/*.m4a
-/services/**/*.wav
-/services/**/*.txt
+**/*.env
+**/*.m4a
+**/*.wav
+**/*.txt
