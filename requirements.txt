@@ -1,0 +1,10 @@
+Flask
+flask_restx
+python-dotenv
+azure-cognitiveservices-speech
+azure-storage-blob
+datetime
+pathlib
+requests
+langchain
+-e package/python-client
