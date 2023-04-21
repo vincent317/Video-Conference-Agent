@@ -12,4 +12,3 @@ Backend Structure TODO:
 
 ASR TODO:
 1. Pack the swagger_client package into future Dockerfile
-2. Fix the manually set container_sas_url & blob_sas_url
