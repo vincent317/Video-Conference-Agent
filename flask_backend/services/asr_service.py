@@ -6,6 +6,7 @@ from pathlib import Path
 from . import zoom_service
 from azure.storage.blob import BlobServiceClient
 from azure.storage.blob import generate_container_sas, ContainerSasPermissions
+from azure.storage.blob import generate_blob_sas, BlobSasPermissions
 import azure.cognitiveservices.speech as speechsdk
 import swagger_client
 import requests
@@ -58,24 +59,23 @@ def transcribe_from_single_blob(uri, properties):
 from datetime import datetime, timedelta
 from azure.storage.blob import BlobClient, generate_blob_sas, BlobSasPermissions
 
-
 def get_blob_sas(storage_account_name, storage_account_key, container_name, blob_name):
     sas_blob = generate_blob_sas(account_name=storage_account_name, 
                                 container_name=container_name,
                                 blob_name=blob_name,
                                 account_key=storage_account_key,
                                 permission=BlobSasPermissions(read=True),
-                                expiry=None)
+                                expiry=datetime.utcnow() + timedelta(hours=1))
     return sas_blob
 
 def get_container_sas(storage_account_name, storage_account_key, container_name):
-    
     container_sas = generate_container_sas(
        account_name=storage_account_name,
        container_name=container_name,
        account_key=storage_account_key,
-       permission=ContainerSasPermissions(write=True),
-       expiry=None)
+       permission=ContainerSasPermissions(write=True, read=True, list=True),
+       start = datetime.utcnow(),
+       expiry=datetime.utcnow() + timedelta(hours=1))
     return container_sas
 
 
@@ -183,14 +183,13 @@ def asr(meeting_id):
         upload_to_blob_storage(out_wav, out_wav)
 
         # Get blob signature and url
-        # blob_token = get_blob_sas(storage_account_name, storage_account_key, container_name, out_wav)
-        # blob_sas_url = 'https://'+storage_account_name+'.blob.core.windows.net/'+container_name+'/'+out_wav+'?'+blob_token
-        # container_token = get_container_sas(stroage_account_name, storage_account_key, transcription_container_name)
-        # container_sas_url = 'https://'+transcription_stroage_account_name+'.blob.core.windows.net/'+transcription_container_name+'?'+container_token
-        # print(container_sas_url)
+        blob_name = out_wav
+        blob_token = get_blob_sas(storage_account_name, storage_account_key, container_name, blob_name)
+        blob_sas_url = 'https://'+storage_account_name+'.blob.core.windows.net/'+container_name+'/'+blob_name+'?'+blob_token
+        container_token = get_container_sas(transcription_stroage_account_name, transcription_stroage_account_key, transcription_container_name)
+        container_sas_url = 'https://'+transcription_stroage_account_name+'.blob.core.windows.net/'+transcription_container_name+'?'+container_token
+
         # Start the transcribe job
-        blob_sas_url = os.getenv('TEMP_BLOB_SAS_URL')
-        container_sas_url = os.getenv('TEMP_CONTAINER_SAS_URL')
         results = transcribe(blob_sas_url, container_sas_url)
         content = results.content.decode('utf-8')
         result = json.loads(content)

@@ -1,0 +1,194 @@
+WEBVTT
+
+1
+00:00:02.800 --> 00:00:09.440
+DAZHI PENG: Hi, Jeffrey, and you need let's talk about the data scripting project that you back to policy. This project coming along.
+
+2
+00:00:10.010 --> 00:00:17.970
+Jeffrey Feng: Hey, Dodgy. We are a bit stuck with scraping some of the websites on our list. Some of them are dynamic, and I couldn't get the data we need.
+
+3
+00:00:18.310 --> 00:00:22.080
+Yooni Choi: Yeah, and i'm new to this task, so I was wondering if you could help us out.
+
+4
+00:00:22.590 --> 00:00:26.580
+DAZHI PENG: Of course I will be happy to help it's specifically to you need help with.
+
+5
+00:00:27.500 --> 00:00:33.280
+Jeffrey Feng: Well, many websites seem dynamic, so I was not able to figure out what to do to scrape them.
+
+6
+00:00:33.480 --> 00:00:37.350
+Jeffrey Feng: I used a few python libraries, but they are not returning me. What I want
+
+7
+00:00:37.890 --> 00:00:40.550
+DAZHI PENG: have you already in the
+
+8
+00:00:44.060 --> 00:00:45.150
+Jeffrey Feng: I have not.
+
+9
+00:00:46.390 --> 00:00:56.840
+DAZHI PENG: It's a software testing room of used to your automated web browsers. It can similarly use the interactions with the website and of all the testing to check for error
+
+10
+00:00:57.130 --> 00:01:02.150
+DAZHI PENG: performance issues and functionality. Try for some of the website you are talking about.
+
+11
+00:01:02.750 --> 00:01:03.680
+Jeffrey Feng: Sure.
+
+12
+00:01:03.770 --> 00:01:08.790
+Jeffrey Feng: Jeffrey's first action item will be to read beautiful Soup's documentation, then
+
+13
+00:01:09.620 --> 00:01:11.980
+DAZHI PENG: you mean a documentation.
+
+14
+00:01:12.450 --> 00:01:16.400
+Jeffrey Feng: Oh, yeah, Oops, Sorry I meant the selenium documentation.
+
+15
+00:01:17.400 --> 00:01:20.110
+Yooni Choi: So, Jeffrey, have you been using the beautiful soup library?
+
+16
+00:01:20.960 --> 00:01:23.930
+Jeffrey Feng: Yes, that's one of the Python libraries that I've been using.
+
+17
+00:01:24.600 --> 00:01:30.050
+Yooni Choi: I kept having installation issues I don't know what is the issue. My python version might be too old.
+
+18
+00:01:30.900 --> 00:01:37.350
+Jeffrey Feng: I'll help you with that. I guess another of Jeffrey's action items will be to help you with price on issues.
+
+19
+00:01:37.620 --> 00:01:42.730
+Yooni Choi: Actually, I want to help with installation issues. I don't think it is really the python thing.
+
+20
+00:01:43.360 --> 00:01:51.510
+Jeffrey Feng: Oh, okay, I'll help you with that, then. nonetheless, could you update your python environment before that as another action? Item.
+
+21
+00:01:51.790 --> 00:01:55.030
+Yooni Choi: that'd be great. Thank you. Is that really necessary? Though
+
+22
+00:01:55.840 --> 00:02:05.550
+Jeffrey Feng: the latest version of Python may have fixed for the issue you're having. If you're using a older version of Python, it is possible that a bug has been fixed in a new version.
+
+23
+00:02:05.980 --> 00:02:08.380
+Yooni Choi: Oh, I see. Sure, let's do what you said.
+
+24
+00:02:09.090 --> 00:02:16.030
+DAZHI PENG: Well, you are waiting for Jeffrey to help you. I think you can ready into the selenium's documentation to actually, I
+
+25
+00:02:16.730 --> 00:02:22.310
+Yooni Choi: I have not finished to be those beautiful soup part. Can I first start with something more relevant?
+
+26
+00:02:22.930 --> 00:02:31.320
+DAZHI PENG: Oh, yeah, sure, really beautiful soup's documentation. There, good Jeffrey, would you send me the link to your kid Up, grandchild? Another action, Icon.
+
+27
+00:02:31.710 --> 00:02:34.240
+Jeffrey Feng: I have not created a Github branch yet
+
+28
+00:02:34.980 --> 00:02:40.200
+DAZHI PENG: this is not good. Create a Github branch, so we can track the progress of this project first.
+
+29
+00:02:40.760 --> 00:02:42.170
+Jeffrey Feng: Sure, I can do that.
+
+30
+00:02:42.560 --> 00:02:46.900
+DAZHI PENG: Another action for both of you that I have listed all people in the meeting.
+
+31
+00:02:46.980 --> 00:02:51.150
+DAZHI PENG: Jeffrey, and a unique is to report the progress to me sometime today.
+
+32
+00:02:51.470 --> 00:02:55.750
+DAZHI PENG: I thought you guys can email me. But it looks like you guys are not not ready yet.
+
+33
+00:02:56.550 --> 00:02:58.540
+Jeffrey Feng: That's true. Sorry about that.
+
+34
+00:02:59.020 --> 00:03:03.800
+Yooni Choi: We can report the progress to you by next week, though. Is that good for you?
+
+35
+00:03:04.140 --> 00:03:05.720
+DAZHI PENG: No, by tomorrow
+
+36
+00:03:06.110 --> 00:03:07.460
+Jeffrey Feng: we can give a try.
+
+37
+00:03:07.890 --> 00:03:14.470
+Yooni Choi: Sounds good to me, Jeffrey. Could we schedule a meeting later? So you can explain your code to me. I want to make sure I understand it.
+
+38
+00:03:16.350 --> 00:03:20.810
+Jeffrey Feng: No, I do not have any previous call, but I can still schedule a meeting with you
+
+39
+00:03:21.540 --> 00:03:32.620
+DAZHI PENG: you need. Do you also want to do the recordings for the previous? I might be too busy with this Week's Project
+
+40
+00:03:33.280 --> 00:03:39.990
+DAZHI PENG: all right, great. And for that just I try to. He will also add some new members to the team to help with this project.
+
+41
+00:03:40.080 --> 00:03:42.090
+DAZHI PENG: I will send you off in a week.
+
+42
+00:03:43.270 --> 00:03:45.950
+Jeffrey Feng: Actually, i'm not sure if this is necessary.
+
+43
+00:03:46.180 --> 00:03:47.870
+Yooni Choi: Yeah, are you sure about that?
+
+44
+00:03:48.180 --> 00:03:55.820
+DAZHI PENG: Well, I agree that it it might not be necessary, but the progress has been slow. No, I have enough budget. We can afford to do that.
+
+45
+00:03:55.900 --> 00:03:59.160
+DAZHI PENG: although i'm not sure if I can even find someone.
+
+46
+00:03:59.260 --> 00:04:08.810
+DAZHI PENG: I will still put this on My. let's do one more using new members to the team. Does that sound good?
+
+47
+00:04:09.700 --> 00:04:11.110
+Jeffrey Feng: Sure, I understand.
+
+48
+00:04:11.460 --> 00:04:12.610
+Yooni Choi: Thanks, Dr.
+

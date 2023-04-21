@@ -1,0 +1,122 @@
+WEBVTT
+
+1
+00:00:04.340 --> 00:00:11.700
+DAZHI PENG: Hi, Jeffrey, and a unique. Let's talk about the data screaming project that you guys have of this project coming along.
+
+2
+00:00:12.280 --> 00:00:13.460
+Jeffrey Feng: Hi, do you?
+
+3
+00:00:13.840 --> 00:00:22.620
+Jeffrey Feng: We we are a bit stuck with scraping some of the websites on our list. Some of them are dynamic, and I couldn't get the data we need.
+
+4
+00:00:22.980 --> 00:00:27.240
+Yooni Choi: Yeah, and i'm new to this task. So I was wondering if you could help us out.
+
+5
+00:00:27.800 --> 00:00:32.110
+DAZHI PENG: Of course I will be happy to help what specifically you need help with.
+
+6
+00:00:34.510 --> 00:00:40.430
+Jeffrey Feng: Well, many websites seem dynamic, so I was not able to figure out what to do to scrape them.
+
+7
+00:00:40.490 --> 00:00:44.720
+I used a few python libraries, but they are not returning me when I want.
+
+8
+00:00:46.780 --> 00:00:49.690
+DAZHI PENG: Have you ready to use the selenium? The library?
+
+9
+00:00:50.150 --> 00:00:51.350
+Jeffrey Feng: I have not.
+
+10
+00:00:51.830 --> 00:01:01.890
+DAZHI PENG: Selenium is a software testing framework used to automated web browsers. and it can similarly use their interactions with the website and perform automated testing to check where
+
+11
+00:01:02.000 --> 00:01:06.840
+DAZHI PENG: performance issues and functionality. Try for some of the website you are talking about.
+
+12
+00:01:07.490 --> 00:01:13.590
+Jeffrey Feng: Sure. Jeffrey's first action item would be to read Selenium's documentation, then.
+
+13
+00:01:14.360 --> 00:01:17.590
+Yooni Choi: So, Jeffrey, have you been using the beautiful suit library.
+
+14
+00:01:18.070 --> 00:01:21.240
+Jeffrey Feng: Yes, that's one of the Python libraries that I've been using.
+
+15
+00:01:21.570 --> 00:01:28.230
+Yooni Choi: I kept having installation issues. I don't know what is what is the issue, though my python version might be too old.
+
+16
+00:01:29.510 --> 00:01:36.100
+Jeffrey Feng: I'll help you with that, I guess. Another of Jeffrey's action item would be to help you with installation issues.
+
+17
+00:01:36.190 --> 00:01:39.100
+Jeffrey Feng: Could you update your python environment before that
+
+18
+00:01:39.690 --> 00:01:44.280
+Yooni Choi: That would be great. Thank you. You will up to her python environment as our action item.
+
+19
+00:01:44.780 --> 00:01:50.580
+DAZHI PENG: Well, you are waiting for Jeffrey to help you. I think you can read into beautiful soups. Documentation
+
+20
+00:01:51.040 --> 00:01:56.560
+Yooni Choi: sounds good to me. You will make sure to read beautiful suit documentation as your second action. Item.
+
+21
+00:01:57.300 --> 00:02:02.760
+DAZHI PENG: good Jeffrey, could you create a Github branch? So we can check the progress of this project.
+
+22
+00:02:03.530 --> 00:02:04.970
+Jeffrey Feng: Sure, I can do that.
+
+23
+00:02:05.060 --> 00:02:09.120
+Jeffrey Feng: Jeffrey's new action item is to create a Github branch. Then
+
+24
+00:02:09.919 --> 00:02:16.330
+DAZHI PENG: another excellent proposed of you, Jeffrey, and a unique. If you report the progress tomorrow to me again.
+
+25
+00:02:16.780 --> 00:02:17.560
+Jeffrey Feng: Sure
+
+26
+00:02:18.030 --> 00:02:25.240
+Yooni Choi: sounds good to me, Jeffrey. Could we schedule a meeting later? So you can explain your previous code to me. I want to make sure I understand it.
+
+27
+00:02:28.020 --> 00:02:33.810
+Jeffrey Feng: Yeah, that sounds good. Jeffrey was scheduling a meeting with Uni as another action item of my
+
+28
+00:02:34.360 --> 00:02:41.780
+DAZHI PENG: All right, great, and for Thatj's action is, he will also add a new member to the team to help out with this project.
+
+29
+00:02:42.040 --> 00:02:44.510
+DAZHI PENG: I will send you all updates in a week.
+
+30
+00:02:44.870 --> 00:02:46.020
+Yooni Choi: Thanks to you.
+

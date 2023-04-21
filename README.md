@@ -1,15 +1,22 @@
 # Video-Conference-Agent
 
-Use notebook_playground for exploration purpose.
-Use flask_backend for production purpose.
+Set-Up:
 
-Pipeline Demo TODO:
-1. Generate the information needed for the meeting report aside from action_items & summaries.
+1. Create some empty data storage folders under the flask_backend/services.
+The flask_backend/services folder should look like this:
 
-Backend Structure TODO:
-1. Change all services (asr_service, zoom_service, chatgpt_service, etc) into an OOP style design and initialize them at once
-2. zoom_service: download all data we need from a meeting at once at stored in an organized file format
+flask_backend/services:
+----/audios
+----/azure_durations
+----/azure_transcripts
+----/clean_durations
+----/clean_transcripts
+----/zoom_transcripts
+----/asr_postprocessing_service.py
+----/asr_service.py
+----/chatgpt_service.py
+----/zoom_service.py
 
-ASR TODO:
-1. Pack the swagger_client package into future Dockerfile
-2. Fix the manually set container_sas_url & blob_sas_url
+2. Put .env in the /flask_backend folder (same folder with controller.py)
+
+3. Install ffmpeg on your local machine (https://ffmpeg.org/download.html)

@@ -35,12 +35,12 @@ class ActionItem(Resource):
             string = '\n'.join(chunk)
             action_items_arr = None
             while True:
-                action_items_arr = chatgpt_service.extract_action_item(string)
+                action_items_arr = chatgpt_service.reduce_action_items(string)
                 if action_items_arr is not None:
                     break
             overlapped.append(action_items_arr)
             
-        ret = chatgpt_service.reduce_action_items(overlapped)
+        ret = chatgpt_service.combine_action_items(overlapped)
         os.chdir(current_dir)
         return ret
     
