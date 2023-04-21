@@ -6,5 +6,11 @@ azure-storage-blob
 datetime
 pathlib
 requests
+webvtt
+jwt
+urllib
+openai
+tiktoken
+faiss-cpu
 langchain
 -e package/python-client
