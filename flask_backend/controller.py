@@ -25,12 +25,12 @@ class ActionItem(Resource):
         zoom_transcript_file = zoom_service.get_meeting_transcript(meeting_id)
         azure_transcript_file, duration_file = asr_service.asr(meeting_id)
 
-        cleaned_duration_dict, clean_path = asr_postprocessing_service.asr_postprocessing(azure_transcript_file, 
+        clean_transcript_path, _ = asr_postprocessing_service.asr_postprocessing(azure_transcript_file, 
                                                                                           duration_file, zoom_transcript_file, 3, meeting_id)
-        with open(clean_path) as f:
-            zoom_transcript_string = f.read()
+        with open(clean_transcript_path) as f:
+            clean_transcript_string = f.read()
 
-        parsed_2d_list = generate_overlapping_chunk(zoom_transcript_string)
+        parsed_2d_list = generate_overlapping_chunk(clean_transcript_string)
         overlapped = []
         for chunk in parsed_2d_list:
             string = '\n'.join(chunk)
@@ -44,21 +44,29 @@ class ActionItem(Resource):
         os.chdir(current_dir)
         return ret
     
-# parser = reqparse.RequestParser()
-# parser.add_argument('agenda_items')
-# @api.route('/summarization/<meeting_id>')
-# @api.doc(params={'meeting_id': 'Meeting ID'})
-# class Summarization(Resource):
-#     @api.expect(parser)
-#     def post(self, meeting_id):
-#         args = parser.parse_args()
-#         agenda_items = args['agenda_items']
+parser = reqparse.RequestParser()
+parser.add_argument('agenda_items')
+@api.route('/summarization/<meeting_id>')
+@api.doc(params={'meeting_id': 'Meeting ID'})
+class Summarization(Resource):
+    @api.expect(parser)
+    def post(self, meeting_id):
+        args = parser.parse_args()
+        agenda_items = args['agenda_items']
 
-#         vtt_file_location = zoom_service.get_meeting_transcript(meeting_id)
-#         meeting_transcript_string = webvtt_parsing(vtt_file_location)
+        current_dir = os.getcwd()
+        os.chdir("services")
+        zoom_transcript_file = zoom_service.get_meeting_transcript(meeting_id)
+        azure_transcript_file, duration_file = asr_service.asr(meeting_id)
+
+        clean_transcript_path, _ = asr_postprocessing_service.asr_postprocessing(azure_transcript_file, 
+                                                                                          duration_file, zoom_transcript_file, 3, meeting_id)
+        with open(clean_transcript_path) as f:
+            clean_transcript_string = f.read()
         
-#         res = chatgpt_service.generate_summaries(agenda_items, meeting_transcript_string)
-#         return {"overrall symmary" : res[0], "agenda summaries" : res[1], "additional summaries" : res[2]}
+        res = chatgpt_service.generate_summaries(agenda_items, clean_transcript_string)
+        os.chdir(current_dir)
+        return {"overrall symmary" : res[0], "agenda summaries" : res[1], "additional summaries" : res[2]}
 
 
 # @api.route('/participants_data/<meeting_id>')

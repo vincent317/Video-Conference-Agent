@@ -60,23 +60,30 @@ Post processed the Azure and Zoom transcripts.
 3. Returns the cleaned duration dict.
 '''
 def asr_postprocessing(azure_transcript, azure_duration, zoom_transcirpt, num_participant, meeting_id):
-    zoom_result_text = parse_transcript(zoom_transcirpt, num_participant)
-    azure_result_text = parse_transcript(azure_transcript, num_participant)
+    clean_transcript_path = os.path.join("clean_transcripts", str(meeting_id) + ".txt")
+    clean_duration_path = os.path.join("clean_durations", str(meeting_id) + ".json")
 
-    # write new transcription.txt files with speaker names
-    ppt_match = chatgpt_service.ppt_matching_api_call(zoom_result_text, azure_result_text)
-    old_transcript = open(azure_transcript).read()
-    for k,i in ppt_match.items():
-        old_transcript = re.sub(i,k, old_transcript)
+    if not os.path.exists(clean_transcript_path) or not os.path.exists(clean_duration_path):
+        zoom_result_text = parse_transcript(zoom_transcirpt, num_participant)
+        azure_result_text = parse_transcript(azure_transcript, num_participant)
 
-    with open(azure_duration, 'r') as fp:
-        duration = json.load(fp)
-    # match name to duration dictionary
-    duration = {y:x for x,y in {duration.get(k, k): v for v, k in ppt_match.items()}.items()}
-    duration['total'] = sum(duration.values())
+        # write new transcription.txt files with speaker names
+        ppt_match = chatgpt_service.ppt_matching_api_call(zoom_result_text, azure_result_text)
+        old_transcript = open(azure_transcript).read()
+        for k,i in ppt_match.items():
+            old_transcript = re.sub(i,k, old_transcript)
 
-    final_path = os.path.join("clean_transcripts", str(meeting_id) + ".txt")
-    with open(final_path, 'w') as f:
-        f.write(old_transcript)
-        print("ASR Postprocessing: Cleaned transcript saved at " + final_path)
-    return duration, final_path
+        with open(azure_duration, 'r') as fp:
+            duration = json.load(fp)
+        # match name to duration dictionary
+        duration = {y:x for x,y in {duration.get(k, k): v for v, k in ppt_match.items()}.items()}
+        duration['total'] = sum(duration.values())
+
+        with open(clean_transcript_path, 'w') as f:
+            f.write(old_transcript)
+            print("ASR Postprocessing: Cleaned transcript saved at " + clean_transcript_path)
+        with open(clean_duration_path, 'w') as f:
+            json.dump(duration, f)
+            print("ASR Postprocessing: Cleaned duration saved at " + clean_duration_path)
+
+    return clean_transcript_path, clean_duration_path
