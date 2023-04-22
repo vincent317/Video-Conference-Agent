@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <title>Video Conference Agent</title>
+      <link rel="stylesheet" href="style.css">
+   </head>
+   <body>
+      <div class="container">
+         <h1>Video Conference Agent</h1>
+         <form id="form" class="form">
+            <label for="meeting_id">Meeting ID:</label>
+            <input type="text" id="meeting_id" name="meeting_id" required><br><br>
+            <label for="agenda_items">Agenda Items: <span class="hint">(Separate each item on its own line)</span></label><br>
+            <textarea id="agenda_items" name="agenda_items" rows="5" cols="30"></textarea><br><br>
+            <input type="submit" value="Submit" onclick="handleSubmit(event)">
+         </form>
+         <div id="result"></div>
+      </div>
+      <script src="script.js"></script>
+   </body>
+</html>
