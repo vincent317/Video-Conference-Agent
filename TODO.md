@@ -13,5 +13,8 @@ a. In asr_service, now I am using the dummy meeting meta information:
     Change it to data we get from ZOOM API. (Priority: 4)
 b. Pack the swagger_client package into future Dockerfile (Priority: 2)
 
-4. General:
+4. FrontEnd
+a. Enforce pattern to Meeting Date/Time input
+
+5. General:
 a. Make a requirements.txt & Dockerfile.
