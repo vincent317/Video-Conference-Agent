@@ -89,7 +89,8 @@ class MeetingInfo(Resource):
         args = parser.parse_args()
         agenda_items = args['agenda_items']
         meeting_date = args['meeting_date'] # will be in format for YYYY-MM-DD HH:MM
-        parsed_meeting_date = dt.strptime(meeting_date, '%Y-%m-%d %H:%M').strftime('%Y-%m-%d %H:%M:%S')
+
+        meeting_title, part_cnt = zoom_service.get_meeting_data(meeting_id)
 
         current_dir = os.getcwd()
         os.chdir("services")
@@ -97,7 +98,7 @@ class MeetingInfo(Resource):
         azure_transcript_file, duration_file = asr_service.asr(meeting_id)
 
         clean_transcript_path, clean_duration_path = asr_postprocessing_service.asr_postprocessing(azure_transcript_file, 
-                                                                                          duration_file, zoom_transcript_file, 3, meeting_id)
+                                                                                          duration_file, zoom_transcript_file, part_cnt, meeting_id)
         with open(clean_transcript_path) as f:
             clean_transcript_string = f.read()
         
@@ -121,14 +122,12 @@ class MeetingInfo(Resource):
         part_info = {}
         if part_arr is not None:
             for p in part_arr:
-                part_info[p['name']] = {'late': 'late' if dt.strptime(p['join_time'], '%Y-%m-%dT%H:%M:%SZ') > dt.strptime(meeting_date, '%Y-%m-%dT%H:%M:%SZ') else 'on-time'}
+                part_info[p['name']] = {'late': 'late' if dt.strptime(p['join_time'], '%Y-%m-%dT%H:%M:%SZ') > dt.strptime(meeting_date, '%Y-%m-%d %H:%M') else 'on-time'}
                 if p['name'] in duration:
                     part_info[p['name']]['duration'] = str(round(duration[p['name']],2))+'s (' + str(round(duration[p['name']]/duration['total']*100, 2))+'%)'
                 else:
                     part_info[p['name']]['duration'] = '0s (0%)'
         
-        meeting_title, _ = zoom_service.get_meeting_data(meeting_id)
-
         os.chdir(current_dir)
         return {'meeting_title': meeting_title,
                 'meeting_date': meeting_date,
