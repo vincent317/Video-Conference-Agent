@@ -103,3 +103,15 @@ def get_meeting_audio(meeting_id):
             return None
     print("Zoom: Meeting audio " + str(meeting_id) + " already exists")
     return store_path
+
+def get_meeting_data(meeting_id):
+    headers, _ = auth()
+    ret = requests.get(
+        'https://api.zoom.us/v2/past_meetings/' + str(meeting_id), headers=headers)
+    if ret.status_code == 200:
+        response = json.loads(ret.text)
+        meeting_title, part_cnt = response['topic'], response['participants_count']
+        return meeting_title, part_cnt
+    else:
+        print("Zoom: Fetching meeting data in meeting " + str(meeting_id) + "failed")
+        return None
