@@ -179,6 +179,9 @@ def asr(meeting_id):
         if not os.path.exists(out_wav): 
             os.system("ffmpeg -i {0} -acodec pcm_s16le -ac 1 -ar 16000 {1}".format(zoom_m4a_location, out_wav))
 
+        if not os.path.exists(out_wav): 
+            raise ValueError("ffmpeg failed. check if that has been installed properly and added to env path.")
+
         # Upload to Azure Blob Storage
         upload_to_blob_storage(out_wav, out_wav)
 

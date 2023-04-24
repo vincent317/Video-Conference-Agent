@@ -8,7 +8,7 @@ datetime
 pathlib
 requests
 webvtt-py
-jwt
+pyjwt
 openai
 tiktoken
 faiss-cpu

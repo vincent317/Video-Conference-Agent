@@ -64,29 +64,29 @@ class ActionItem(Resource):
         os.chdir(current_dir)
         return ret
     
-parser = reqparse.RequestParser()
-parser.add_argument('agenda_items')
-@api.route('/summarization/<meeting_id>')
-@api.doc(params={'meeting_id': 'Meeting ID'})
-class Summarization(Resource):
-    @api.expect(parser)
-    def post(self, meeting_id):
-        args = parser.parse_args()
-        agenda_items = args['agenda_items']
+# parser = reqparse.RequestParser()
+# parser.add_argument('agenda_items')
+# @api.route('/summarization/<meeting_id>')
+# @api.doc(params={'meeting_id': 'Meeting ID'})
+# class Summarization(Resource):
+#     @api.expect(parser)
+#     def post(self, meeting_id):
+#         args = parser.parse_args()
+#         agenda_items = args['agenda_items']
 
-        current_dir = os.getcwd()
-        os.chdir("services")
-        zoom_transcript_file = zoom_service.get_meeting_transcript(meeting_id)
-        azure_transcript_file, duration_file = asr_service.asr(meeting_id)
+#         current_dir = os.getcwd()
+#         os.chdir("services")
+#         zoom_transcript_file = zoom_service.get_meeting_transcript(meeting_id)
+#         azure_transcript_file, duration_file = asr_service.asr(meeting_id)
 
-        clean_transcript_path, _ = asr_postprocessing_service.asr_postprocessing(azure_transcript_file, 
-                                                                                          duration_file, zoom_transcript_file, 3, meeting_id)
-        with open(clean_transcript_path) as f:
-            clean_transcript_string = f.read()
+#         clean_transcript_path, _ = asr_postprocessing_service.asr_postprocessing(azure_transcript_file, 
+#                                                                                           duration_file, zoom_transcript_file, 3, meeting_id)
+#         with open(clean_transcript_path) as f:
+#             clean_transcript_string = f.read()
         
-        res = chatgpt_service.generate_summaries(agenda_items, clean_transcript_string)
-        os.chdir(current_dir)
-        return res
+#         res = chatgpt_service.generate_summaries(agenda_items, clean_transcript_string)
+#         os.chdir(current_dir)
+#         return res
 
 
 # @api.route('/participants_data/<meeting_id>')
@@ -95,15 +95,20 @@ class Summarization(Resource):
 #     def get(self, meeting_id):
 #         return zoom_service.get_participants_data(meeting_id)
 
+parser = reqparse.RequestParser()
+parser.add_argument('agenda_items')
+parser.add_argument('meeting_date')
 @api.route('/meeting_info/<meeting_id>')
 @api.doc(params={'meeting_id': 'Meeting ID'})
 class MeetingInfo(Resource):
-    parser = reqparse.RequestParser()
-    parser.add_argument('agenda_items')
-    parser.add_argument('meeting_date')
+    # parser = reqparse.RequestParser()
+    # parser.add_argument('agenda_items')
+    # parser.add_argument('meeting_date')
     @api.expect(parser)
     def post(self, meeting_id):
         args = parser.parse_args()
+        print("\n\n\n\n\n\n\n")
+        print(args)
         agenda_items = args['agenda_items']
         meeting_date = args['meeting_date'] # will be in format for YYYY-MM-DD HH:MM
 
