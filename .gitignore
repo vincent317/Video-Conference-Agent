@@ -6,3 +6,4 @@ notebook_playground/ASRwork/Azure/.env
 **/*.vtt
 **/*.json
 !requirements.txt
+!/packages/

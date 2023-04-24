@@ -4,12 +4,29 @@ from flask_cors import CORS
 import os
 from dotenv import load_dotenv
 
+# load environment variables
 env_path = ".env"
+if not os.path.exists(env_path):
+    raise ValueError('env_path environment variable not found')
 load_dotenv(dotenv_path=env_path)
+
 from services import zoom_service, asr_service, asr_postprocessing_service
 from services import chatgpt_service
 from utils.ai_transcript_chunking import generate_overlapping_chunk
-from utils.action_item_parsing import action_item_processing
+# from utils.action_item_parsing import action_item_processing
+
+# make sure file structure exists
+required_dirs = ['/services/audios', 
+                 '/services/azure_durations', 
+                 '/services/azure_transcripts', 
+                 '/services/clean_durations', 
+                 '/services/clean_transcripts', 
+                 '/services/zoom_transcripts']
+
+for directory in required_dirs:
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+        print(f"Directory '{directory}' created successfully.")
 
 # Flask & Swagger Initialization
 app = Flask(__name__)

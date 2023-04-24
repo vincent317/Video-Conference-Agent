@@ -1,16 +1,16 @@
 Flask
 flask_restx
+flask-cors
 python-dotenv
 azure-cognitiveservices-speech
 azure-storage-blob
 datetime
 pathlib
 requests
-webvtt
+webvtt-py
 jwt
-urllib
 openai
 tiktoken
 faiss-cpu
 langchain
--e package/python-client
+-e packages/python-client
