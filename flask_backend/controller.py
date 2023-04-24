@@ -17,12 +17,12 @@ from utils.ai_transcript_chunking import generate_overlapping_chunk
 # from utils.action_item_parsing import action_item_processing
 
 # make sure file structure exists
-required_dirs = ['/services/audios', 
-                 '/services/azure_durations', 
-                 '/services/azure_transcripts', 
-                 '/services/clean_durations', 
-                 '/services/clean_transcripts', 
-                 '/services/zoom_transcripts']
+required_dirs = ['services/audios', 
+                 'services/azure_durations', 
+                 'services/azure_transcripts', 
+                 'services/clean_durations', 
+                 'services/clean_transcripts', 
+                 'services/zoom_transcripts']
 
 for directory in required_dirs:
     if not os.path.exists(directory):
@@ -107,7 +107,6 @@ class MeetingInfo(Resource):
     @api.expect(parser)
     def post(self, meeting_id):
         args = parser.parse_args()
-        print("\n\n\n\n\n\n\n")
         print(args)
         agenda_items = args['agenda_items']
         meeting_date = args['meeting_date'] # will be in format for YYYY-MM-DD HH:MM
@@ -144,7 +143,12 @@ class MeetingInfo(Resource):
         part_info = {}
         if part_arr is not None:
             for p in part_arr:
-                part_info[p['name']] = {'late': 'late' if dt.strptime(p['join_time'], '%Y-%m-%dT%H:%M:%SZ') > dt.strptime(meeting_date, '%Y-%m-%d %H:%M') else 'on-time'}
+                join_time = dt.strptime(p['join_time'], '%Y-%m-%dT%H:%M:%SZ')
+                actual_meeting_time = dt.strptime(meeting_date, '%Y-%m-%dT%H:%M')
+                print(join_time)
+                print(actual_meeting_time)
+
+                part_info[p['name']] = {'late': 'late' if join_time > actual_meeting_time else 'on-time'}
                 if p['name'] in duration:
                     part_info[p['name']]['duration'] = str(round(duration[p['name']],2))+'s (' + str(round(duration[p['name']]/duration['total']*100, 2))+'%)'
                 else:

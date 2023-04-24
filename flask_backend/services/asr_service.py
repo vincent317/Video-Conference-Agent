@@ -174,7 +174,7 @@ def asr(meeting_id):
 
     if not os.path.exists(transcript_file) or not os.path.exists(duration_file):
         zoom_m4a_location = zoom_service.get_meeting_audio(meeting_id)
-        out_wav = str(meeting_id) + ".wav"
+        out_wav = os.path.join("audios", str(meeting_id) + ".wav")
         # Transform to .wav file from m4a file
         if not os.path.exists(out_wav): 
             os.system("ffmpeg -i {0} -acodec pcm_s16le -ac 1 -ar 16000 {1}".format(zoom_m4a_location, out_wav))

@@ -2,36 +2,43 @@ const form = document.getElementById('form');
 const resultDiv = document.getElementById('result');
 
 async function handleSubmit(event) {
-event.preventDefault();
+  event.preventDefault();
 
-// Remove previously generated content
-resultDiv.innerHTML = '';
+  // Show "loading" message
+  resultDiv.innerHTML = 'Loading meeting report...';
 
-const meeting_id = document.getElementById('meeting_id').value;
-if (!meeting_id) {
-alert('Please input meeting ID.');
-return;
-}
-
-const agenda_items = document.getElementById('agenda_items').value;
-
-try {
-const response = await fetch(`http://127.0.0.1:5000/meeting_info/${meeting_id}?agenda_items=${agenda_items}`, {
-  method: 'POST',
-  headers: {
-    'accept': 'application/json'
+  const meeting_id = document.getElementById('meeting_id').value;
+  if (!meeting_id) {
+    alert('Please input meeting ID.');
+    return;
   }
-});
 
-if (!response.ok) {
-  throw new Error(`HTTP error! status: ${response.status}`);
-}
+  const agenda_items = document.getElementById('agenda_items').value;
+  const meeting_date = document.getElementById('meeting_date').value;
 
-const data = await response.json();
+  try {
+    // Send request to server
+    let url = encodeURI(`http://127.0.0.1:5000/meeting_info/${meeting_id}?agenda_items=${agenda_items}&meeting_date=${meeting_date}`);
+    console.log(url)
+    const response = await fetch(
+      url,
+      {
+        method: 'POST',
+        headers: {
+          'accept': 'application/json'
+        }
+      });
 
-// Create the meeting info section
-const meetingInfoSection = document.createElement('div');
-meetingInfoSection.innerHTML = `
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const data = await response.json();
+
+
+    // Create the meeting info section
+    const meetingInfoSection = document.createElement('div');
+    meetingInfoSection.innerHTML = `
   <h2>Meeting Information:</h2><hr><br>
   <p>Meeting Title: ${data.meeting_title}</p>
   <p>Meeting Date: ${data.meeting_date}</p>
@@ -45,11 +52,11 @@ meetingInfoSection.innerHTML = `
     `).join('')}
   </ul>
 `;
-resultDiv.appendChild(meetingInfoSection);
+    resultDiv.appendChild(meetingInfoSection);
 
-// Create the summary section
-const summarySection = document.createElement('div');
-summarySection.innerHTML = `
+    // Create the summary section
+    const summarySection = document.createElement('div');
+    summarySection.innerHTML = `
   <h2>Summary and Agenda:</h2><hr><br>
   <h3>Overall summary:</h3>
   <p>${data.summary['Overall summary']}</p>
@@ -69,26 +76,26 @@ summarySection.innerHTML = `
   <h3>Additional summaries:</h3>
   <p>${data.summary['Additional summaries']}</p>
 `;
-resultDiv.appendChild(summarySection);
+    resultDiv.appendChild(summarySection);
 
-// Create the action items section
-const actionItemsSection = document.createElement('div');
-actionItemsSection.innerHTML = `
+    // Create the action items section
+    const actionItemsSection = document.createElement('div');
+    actionItemsSection.innerHTML = `
   <h2>Action Items:</h2><hr><br>
   <ul>
     ${data.action_items.map(item => `<li>${item}</li>`).join('')}
   </ul>
 `;
-resultDiv.appendChild(actionItemsSection);
+    resultDiv.appendChild(actionItemsSection);
 
-} catch (error) {
-const errorSection = document.createElement('div');
-errorSection.innerHTML = `
+  } catch (error) {
+    const errorSection = document.createElement('div');
+    errorSection.innerHTML = `
   <h2>Error:</h2><hr><br>
   <p>${error.message}</p>
 `;
-resultDiv.appendChild(errorSection);
-}
+    resultDiv.appendChild(errorSection);
+  }
 }
 
 

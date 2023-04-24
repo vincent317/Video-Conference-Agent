@@ -95,7 +95,7 @@ def generate_summaries(agenda_text, transcript_text):
 
     The function returns a tuple containing the three summaries as strings.
     """
-    print("ChatGPT: Generating summaries for the meeting")
+    print("ChatGPT: Generating overall summaries for the meeting")
     llm = ChatOpenAI(model_name='gpt-3.5-turbo-0301',
                      openai_api_key=API_KEY)
 
@@ -120,7 +120,8 @@ def generate_summaries(agenda_text, transcript_text):
 
     num_agenda = 0
 
-    for agenda in agenda_text.split('.'):
+    print("ChatGPT: Generating summary for agenda item.")
+    for agenda in agenda_text.split('\n'):
         agenda = agenda.strip()
         if agenda:
             num_agenda += 1
@@ -134,6 +135,7 @@ def generate_summaries(agenda_text, transcript_text):
             short_agenda_summaries[agenda] = "".join(short_summary.split(":")[1:]).strip()
             long_agenda_summaries[agenda] = "".join(long_summary.split(":")[1:]).strip()
         
+    print("ChatGPT: Generating summary for non agenda item.")
 
     # get summary not coverred by the agenda items
     additional_summaries = \
