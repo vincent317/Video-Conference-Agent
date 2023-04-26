@@ -29,6 +29,9 @@ NAME = "TEST MEETING" # TODO: get from zoom
 DESCRIPTION = "N/A" # TODO: get from zoom
 PARTICIPANT_COUNT = 3 # TODO: get from zoom
 
+# Name and Participant_cnt can be gained by calling below code, but would have to specify meeting_id:
+# meeting_title, part_cnt = zoom_service.get_meeting_data(meeting_id)
+
 def upload_to_blob_storage(file_path, file_name):
     blob_service_client = BlobServiceClient.from_connection_string(connection_string)
     blob_client = blob_service_client.get_blob_client(container=container_name, blob=file_name)
