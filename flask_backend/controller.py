@@ -154,7 +154,8 @@ class MeetingInfo(Resource):
         
         os.chdir(current_dir)
         return {'meeting_title': meeting_title,
-                'meeting_date': meeting_date,
+                'meeting_date': args['meeting_date'],
+                'meeting_time': args['meeting_time'],
                 'participants': part_info,
                 'summary': summary, 'action_items': action_items}
 
