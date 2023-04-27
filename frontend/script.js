@@ -108,13 +108,24 @@ async function handleSubmit(event) {
       const reportHTML = resultDiv.innerHTML;
     
       // Create the report blob and download the file
-      const reportBlob = new Blob([reportHTML], {type: 'text/html'});
+      const reportBlob = new Blob([`
+        <html>
+          <head>
+            <title>Meeting Report</title>
+            <script src="./functions.js"></script>
+          </head>
+          <body>
+            ${reportHTML}
+          </body>
+        </html>
+      `], {type: 'text/html'});
       const reportURL = URL.createObjectURL(reportBlob);
       const downloadLink = document.createElement('a');
       downloadLink.href = reportURL;
       downloadLink.download = 'meeting_report.html';
       downloadLink.click();
     };
+    
 
     loadingMessage.remove()
   
