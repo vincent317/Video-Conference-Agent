@@ -45,7 +45,7 @@ async function handleSubmit(event) {
   <div>
     <h2>Meeting Information:</h2><hr><br>
     <p>Meeting Title: ${data.meeting_title}</p>
-    <p>Meeting Date: ${data.meeting_date}</p>
+    <p>Meeting Date: ${data.meeting_date} ${data.meeting_time}</p>
     <h3>Participants:</h3>
     <ul>
       ${Object.entries(data.participants).map(([participant, details]) => `
