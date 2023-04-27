@@ -12,6 +12,7 @@ b. Pack the swagger_client package into future Dockerfile (Priority: 2)
 
 3. FrontEnd
 a. Enforce pattern to Meeting Date/Time input
+b. Fix 'show/hide long summary' toggle issue in downloaded html
 
 4. Cloud
 a. Make a Dockerfile and deploy to the cloud.

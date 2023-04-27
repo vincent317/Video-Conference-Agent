@@ -7,7 +7,14 @@
    </head>
    <body>
       <div class="container">
-         <h1>Video Conference Agent</h1>
+         <h1>Video Conference Agent v1</h1>
+         <p>Introducing Video Conference Agent v1! 
+            Current version generates meeting reports to help you get the most out of your video calls. 
+            Assuming a preconfigured meeting has already taken place and been saved to the cloud, 
+            simply provide us with the <strong>Meeting ID, Meeting Date/Time, and Agenda Items</strong>, and our agent will 
+            take care of the rest. 
+            <br><br>No more tedious note-taking or missed action items – 
+            <em>let us streamline your video calls and simplify your life!</em></p>
          <form id="form" class="form">
             <label for="meeting_id">Meeting ID:</label>
             <input type="text" id="meeting_id" name="meeting_id" required><br><br>
@@ -15,8 +22,19 @@
             <!-- <label for="meeting_title">Meeting Title:</label>
             <input type="text" id="meeting_title" name="meeting_title" required><br><br> -->
 
-            <label for="meeting_date">Meeting Date/Time:<span class="hint">(Format: YYYY-MM-DDTHH:MM)</span></label>
-            <input type="text" id="meeting_date" name="meeting_date" required><br><br>
+            <div class="date-time-container">
+               <div class="input-wrapper">
+                  <label for="meeting_date">Meeting Date:</label>
+                  <input type="text" id="meeting_date" name="meeting_date" placeholder="YYYY-MM-DD" required>
+               </div>
+
+               <div class="input-wrapper">
+                  <label for="meeting_time">Meeting Time:</label>
+                  <input type="text" id="meeting_time" name="meeting_time" placeholder="HH:MM" required>
+               </div>
+            </div>
+            <br>
+
 
             <label for="agenda_items">Agenda Items: <span class="hint">(Separate each item on its own line)</span></label>
             <textarea id="agenda_items" name="agenda_items" rows="5" cols="30"></textarea><br><br>

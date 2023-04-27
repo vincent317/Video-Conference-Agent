@@ -98,6 +98,7 @@ class ActionItem(Resource):
 parser = reqparse.RequestParser()
 parser.add_argument('agenda_items')
 parser.add_argument('meeting_date')
+parser.add_argument('meeting_time')
 @api.route('/meeting_info/<meeting_id>')
 @api.doc(params={'meeting_id': 'Meeting ID'})
 class MeetingInfo(Resource):
@@ -107,9 +108,8 @@ class MeetingInfo(Resource):
     @api.expect(parser)
     def post(self, meeting_id):
         args = parser.parse_args()
-        print(args)
         agenda_items = args['agenda_items']
-        meeting_date = args['meeting_date'] # will be in format for YYYY-MM-DD HH:MM
+        meeting_date = args['meeting_date']+'T'+args['meeting_time']
 
         meeting_title, part_cnt = zoom_service.get_meeting_data(meeting_id)
 
@@ -145,8 +145,6 @@ class MeetingInfo(Resource):
             for p in part_arr:
                 join_time = dt.strptime(p['join_time'], '%Y-%m-%dT%H:%M:%SZ')
                 actual_meeting_time = dt.strptime(meeting_date, '%Y-%m-%dT%H:%M')
-                print(join_time)
-                print(actual_meeting_time)
 
                 part_info[p['name']] = {'late': 'late' if join_time > actual_meeting_time else 'on-time'}
                 if p['name'] in duration:
@@ -156,7 +154,8 @@ class MeetingInfo(Resource):
         
         os.chdir(current_dir)
         return {'meeting_title': meeting_title,
-                'meeting_date': meeting_date,
+                'meeting_date': args['meeting_date'],
+                'meeting_time': args['meeting_time'],
                 'participants': part_info,
                 'summary': summary, 'action_items': action_items}
 

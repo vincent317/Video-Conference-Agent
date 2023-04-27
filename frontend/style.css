@@ -129,6 +129,26 @@
   .action-items h2 {
     font-weight: bold;
   }
+
+  .date-time-container {
+    display: flex !important;
+ }
+ 
+  .date-time-container input {
+      margin-right: 10px !important;
+  }
+
+  .input-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+  }
+  
+  .input-wrapper label {
+    margin-bottom: 5px;
+  }
+  
+  
   
   /* Buttons */
   button {
