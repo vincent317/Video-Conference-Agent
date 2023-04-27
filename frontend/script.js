@@ -96,12 +96,26 @@ async function handleSubmit(event) {
     ${actionItemsSection}
   `;
 
-    // // Create the download button
-    // const downloadButton = document.createElement('button');
-    // downloadButton.innerText = 'Download Generated Report';
-    // downloadButton.onclick = downloadReport;
+    // Create the download button
+    const downloadButton = document.createElement('button');
+    downloadButton.innerText = 'Download Generated Report';
+    resultDiv.appendChild(downloadButton);
+    downloadButton.onclick = function() {
+      // Remove download button from the DOM
+      downloadButton.remove();
+    
+      // Get the report HTML
+      const reportHTML = resultDiv.innerHTML;
+    
+      // Create the report blob and download the file
+      const reportBlob = new Blob([reportHTML], {type: 'text/html'});
+      const reportURL = URL.createObjectURL(reportBlob);
+      const downloadLink = document.createElement('a');
+      downloadLink.href = reportURL;
+      downloadLink.download = 'meeting_report.html';
+      downloadLink.click();
+    };
 
-    // resultDiv.appendChild(downloadButton);
     loadingMessage.remove()
   
 
@@ -119,14 +133,4 @@ async function handleSubmit(event) {
 function toggleLongSummary(agenda) {
   const longSummary = document.getElementById(`${agenda}_long_summary`);
   longSummary.style.display = longSummary.style.display === 'none' ? 'block' : 'none';
-}
-
-function downloadReport() {
-  const reportHTML = resultDiv.innerHTML;
-  const reportBlob = new Blob([reportHTML], {type: 'text/html'});
-  const reportURL = URL.createObjectURL(reportBlob);
-  const downloadLink = document.createElement('a');
-  downloadLink.href = reportURL;
-  downloadLink.download = 'meeting_report.html';
-  downloadLink.click();
 }
