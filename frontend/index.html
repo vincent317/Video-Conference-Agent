@@ -22,8 +22,19 @@
             <!-- <label for="meeting_title">Meeting Title:</label>
             <input type="text" id="meeting_title" name="meeting_title" required><br><br> -->
 
-            <label for="meeting_date">Meeting Date/Time:<span class="hint">(Format: YYYY-MM-DDTHH:MM)</span></label>
-            <input type="text" id="meeting_date" name="meeting_date" required><br><br>
+            <div class="date-time-container">
+               <div class="input-wrapper">
+                  <label for="meeting_date">Meeting Date:</label>
+                  <input type="text" id="meeting_date" name="meeting_date" placeholder="YYYY-MM-DD" required>
+               </div>
+
+               <div class="input-wrapper">
+                  <label for="meeting_time">Meeting Time:</label>
+                  <input type="text" id="meeting_time" name="meeting_time" placeholder="HH:MM" required>
+               </div>
+            </div>
+            <br>
+
 
             <label for="agenda_items">Agenda Items: <span class="hint">(Separate each item on its own line)</span></label>
             <textarea id="agenda_items" name="agenda_items" rows="5" cols="30"></textarea><br><br>
