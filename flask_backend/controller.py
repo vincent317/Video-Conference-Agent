@@ -4,6 +4,7 @@ from flask_cors import CORS
 import os, json
 from dotenv import load_dotenv
 from datetime import datetime as dt
+import pytz, urllib.parse
 
 # load environment variables
 env_path = ".env"
@@ -99,6 +100,7 @@ parser = reqparse.RequestParser()
 parser.add_argument('agenda_items')
 parser.add_argument('meeting_date')
 parser.add_argument('meeting_time')
+parser.add_argument('timezone')
 @api.route('/meeting_info/<meeting_id>')
 @api.doc(params={'meeting_id': 'Meeting ID'})
 class MeetingInfo(Resource):
@@ -109,7 +111,8 @@ class MeetingInfo(Resource):
     def post(self, meeting_id):
         args = parser.parse_args()
         agenda_items = args['agenda_items']
-        meeting_date = args['meeting_date']+'T'+args['meeting_time']
+        timezone = urllib.parse.unquote(args['timezone'])
+        meeting_date = args['meeting_date']+'T'+args['meeting_time']+':00'
 
         meeting_title, part_cnt = zoom_service.get_meeting_data(meeting_id)
 
@@ -143,10 +146,15 @@ class MeetingInfo(Resource):
         part_info = {}
         if part_arr is not None:
             for p in part_arr:
-                join_time = dt.strptime(p['join_time'], '%Y-%m-%dT%H:%M:%SZ')
-                actual_meeting_time = dt.strptime(meeting_date, '%Y-%m-%dT%H:%M')
+                # convert timezone
+                tz = pytz.timezone(timezone)
+                meeting_time_eastern = tz.localize(dt.strptime(meeting_date, '%Y-%m-%dT%H:%M:%S'), is_dst=None)
+                utc = pytz.timezone('UTC')
+                join_time = utc.localize(dt.strptime(p['join_time'], '%Y-%m-%dT%H:%M:%SZ'))
+                join_time_eastern = join_time.astimezone(tz)
+                
 
-                part_info[p['name']] = {'late': 'late' if join_time > actual_meeting_time else 'on-time'}
+                part_info[p['name']] = {'late': 'late' if join_time_eastern > meeting_time_eastern else 'on-time'}
                 if p['name'] in duration:
                     part_info[p['name']]['duration'] = str(round(duration[p['name']],2))+'s (' + str(round(duration[p['name']]/duration['total']*100, 2))+'%)'
                 else:

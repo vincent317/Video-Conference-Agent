@@ -19,10 +19,12 @@ async function handleSubmit(event) {
   const agenda_items = document.getElementById('agenda_items').value;
   const meeting_date = document.getElementById('meeting_date').value;
   const meeting_time = document.getElementById('meeting_time').value;
+  const timezoneSelector = document.getElementById('timezone');
+  const timezone = encodeURIComponent(timezoneSelector.value);
 
   try {
     // Send request to server
-    let url = encodeURI(`http://127.0.0.1:5000/meeting_info/${meeting_id}?agenda_items=${agenda_items}&meeting_date=${meeting_date}&meeting_time=${meeting_time}`);
+    let url = encodeURI(`http://127.0.0.1:5000/meeting_info/${meeting_id}?agenda_items=${agenda_items}&timezone=${timezone}&meeting_date=${meeting_date}&meeting_time=${meeting_time}`);
     console.log(url)
     const response = await fetch(
       url,
