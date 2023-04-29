@@ -111,7 +111,7 @@ def generate_summaries(agenda_text, transcript_text):
     # get overall summary of the meeting
 
     overall_summary = \
-        return_llm_answer('Provide a summary of the meeting.', chain, search_index)
+        return_llm_answer('Provide a short summary of the meeting.', chain, search_index)
 
     # get a dictionary of short agenda item summaries
     
