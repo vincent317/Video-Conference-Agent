@@ -3,7 +3,7 @@ import os
 from . import chatgpt_service
 import json
 
-def parse_transcript(transcript_file, num_participant, num_line_threshold = 3):
+def parse_transcript(transcript_file, num_participant, num_line_threshold = 5):
     """Parse a transcript file and extract conversation text from each participant.
 
     Args:
