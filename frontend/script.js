@@ -7,6 +7,7 @@ async function handleSubmit(event) {
   const loadingMessage = document.createElement('div');
   loadingMessage.id = 'loading-message';
   loadingMessage.innerText = 'Loading meeting report...';
+  loadingMessage.style.fontSize = '24px';
   resultDiv.appendChild(loadingMessage);
   
 
